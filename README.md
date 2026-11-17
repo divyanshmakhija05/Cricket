@@ -1,7 +1,8 @@
-# SupeRR Selector S2 — Pressure Index pipeline
+# Pressure Index pipeline
 
-Identify the most reliable players under pressure. This folder holds the data pipeline and the pressure model
-(Stages 01-04). Stages 05-06 (Day 3-4) add value-added and player ratings; robustness and final lists come in Day 5.
+Data provided is not available here to be in compliance with the competition rules
+
+This folder holds the data pipeline and the pressure model
 
 ## Quick start
 ```
