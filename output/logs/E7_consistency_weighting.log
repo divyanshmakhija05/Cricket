@@ -1,0 +1,11 @@
+E7 VOLUME-WEIGHTED CONSISTENCY - repeatability across random match halves (60 splits)
+  bat: C1 -0.16 | C2 +0.10 | C3 -0.05 | C0 +0.04
+      C1 sqrt(W)-weighted votes                    repeatability -0.162 (SD over splits 0.55, 46 usable splits)
+      C2 disaster = total-impact bottom 20%        repeatability +0.096 (SD over splits 0.09, 57 usable splits)
+      C3 total-impact disaster + sqrt(W) votes     repeatability -0.047 (SD over splits 0.30, 45 usable splits)
+      C0 current (equal votes)                     repeatability +0.040 (SD over splits 0.08, 54 usable splits)
+  bowl: C0 +0.23 | C1 +0.16 | C2 +0.19 | C3 +0.18
+      C0 current (equal votes)                     repeatability +0.227 (SD over splits 0.06, 60 usable splits)
+      C1 sqrt(W)-weighted votes                    repeatability +0.159 (SD over splits 0.07, 60 usable splits)
+      C2 disaster = total-impact bottom 20%        repeatability +0.185 (SD over splits 0.07, 60 usable splits)
+      C3 total-impact disaster + sqrt(W) votes     repeatability +0.177 (SD over splits 0.07, 60 usable splits)

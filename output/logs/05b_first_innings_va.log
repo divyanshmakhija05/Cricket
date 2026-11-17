@@ -1,0 +1,4 @@
+Brier skill score vs the no-skill forecast: chase 0.488 (Brier 0.128) | innings 1 0.124 (Brier 0.219) | layer weight lambda = 0.254
+phase-aware standardisation (innings 1): 41 cells (--phase-aware)
+innings-1 balls with value added: 91,720 | with estimation weight > 0: 91,720 | ordinary (baseline) balls: 31,898
+centred VA mean by bin (max abs): 0.0003 | attributable to batter 0.982, to bowler 0.980

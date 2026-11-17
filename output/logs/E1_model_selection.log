@@ -1,0 +1,11 @@
+INNINGS 2 (logloss, auc)
+ LR base (0.4055, 0.895)
+ LR eng (0.4005, 0.8972)
+ LR eng2 (0.4003, 0.8971)
+ LR poly2 on eng (0.4034, 0.8959)
+ GBM reg. (0.4215, 0.8892)
+INNINGS 1
+ LR base (0.6329, 0.6944)
+ LR eng (0.6329, 0.6936)
+ LR poly2 (0.6343, 0.6933)
+ GBM reg. (0.6379, 0.6849)

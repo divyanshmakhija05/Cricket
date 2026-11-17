@@ -1,0 +1,37 @@
+=== DATA TABLE CHECKS ===
+[PASS] keys unique (match, innings, ball)
+[PASS] score, wickets, legal-ball count never decrease within an innings
+[PASS] no innings has >10 wickets, >max legal balls, or >20 overs
+[PASS] batting team != bowling team on every ball
+[WARN] striker != non-striker -- 1 anomalous row(s) in raw data
+[PASS] each bowler belongs to one team per match
+[PASS] complete overs have exactly 6 legal balls (>=99.9%) -- 99.9869% of 30,626 overs
+[PASS] chase label = 1 when result says won by wickets (>=99%) -- 100.000% of 406
+[PASS] chase label = 0 when result says won by runs (>=99%) -- 100.000% of 399
+[PASS] innings-1 label is the complement of innings-2 label
+[PASS] DLS-like text in result is always flagged dls
+[PASS] chase balls already past the target BEFORE the ball are rare (<0.5%) -- 0.160% -- extras-estimation noise
+[PASS] venue par has no missing values
+[PASS] shrunk venue par predicts first-innings total at least as well as the tier mean -- RMSE 39.16 vs 39.66
+[PASS] reconstructed run margins match official margins (mean abs error < 3 runs) -- MAE 2.11 runs over 399 matches; within 2 runs: 56.9%
+
+=== PRESSURE FILE CHECKS ===
+[PASS] pressure keys unique and present in ball_state
+[PASS] win probability in [0,1] with no missing values
+[PASS] leverage non-negative with no missing values
+[PASS] every chase ball has a pressure percentile
+[PASS] innings-1 balls carry no pressure score (by design)
+[PASS] high-pressure share of chase balls is ~10% -- 10.001%
+[PASS] chase WP at ball 1 is close to the actual chase win rate (within 0.03) -- 0.505 vs 0.502
+[PASS] expected calibration error < 0.01 -- ECE 0.0079
+[PASS] calibration within tier IPL (|pred - actual| < 0.03) -- 0.499 vs 0.501
+[PASS] calibration within tier T20I_Assoc (|pred - actual| < 0.03) -- 0.314 vs 0.313
+[PASS] calibration within tier T20I_Full (|pred - actual| < 0.03) -- 0.478 vs 0.479
+
+=== FIRST-INNINGS PRESSURE FILE CHECKS ===
+[PASS] first-innings keys unique and present in ball_state
+[PASS] first-innings file contains innings 1 only
+[PASS] first-innings win probability in [0,1]
+[PASS] first-innings pressure percentile in [0,1]; high-pressure share ~10% of legal balls -- 10.000%
+
+SUMMARY: 29 PASS, 1 WARN, 0 FAIL

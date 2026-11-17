@@ -1,0 +1,62 @@
+Eligibility: >= 8 pressure appearances (match with total pressure weight >= 1.0), total pressure weight >= 25, and >= 15 balls in the top-10% pressure band
+Rating = 0.60 zeta(P) + 0.30 zeta(Consistency) + 0.10 zeta(Uplift); zeta = posterior mean in SDs of true between-player skill
+
+=== BAT ===
+    pressure component zr_bat  : mu +0.0231, between-player SD tau 0.0535, median shrink factor (eligible) 0.81
+    pressure component zw_bat  : mu -0.0002, between-player SD tau 0.0268, median shrink factor (eligible) 0.44
+    baseline (runs value, pooled ordinary chase + first-innings balls): tau 0.0647, median weight per eligible player 216.0 vs pressure 87.7; uplift tau 0.0650, median shrink factor 0.41, eligible players with no baseline balls 0
+    consistency hit: league rate 0.496, between-player SD 0.000
+    consistency dis: league rate 0.197, between-player SD 0.062
+    players with any pressure ball 813 | eligible 89
+    reliability P raw    : random match-halves r = +0.15 (SD 0.12 over 40 splits, 0 degenerate) | early vs late matches r = -0.03
+    reliability P shrunk : random match-halves r = +0.28 (SD 0.09 over 40 splits, 0 degenerate) | early vs late matches r = +0.07
+    reliability RATING   : random match-halves r = +0.25 (SD 0.09 over 40 splits, 0 degenerate) | early vs late matches r = +0.10
+    (check: z shrunk as ONE number) P shrunk: random halves r = +0.17, 0/40 splits degenerate (tau collapsed to 0) | early vs late r = +0.01
+    top 15 by rating (eligible):
+                      player   app        W  P_raw   P_eb  zeta_P  zeta_C  zeta_U  rating
+striker_id                                                                               
+4260        Heinrich Klaasen  16.0  101.579  0.157  0.130   1.795   0.307   1.048   1.274
+1699        Suryakumar Yadav  27.0  212.001  0.144  0.128   1.763  -0.077  -0.049   1.030
+8101         Ashutosh Sharma   9.0   65.782  0.211  0.108   1.424   0.288   0.484   0.989
+768          Reeza Hendricks  11.0   93.804  0.097  0.103   1.345   0.338   0.787   0.987
+6396               Tim David  22.0  165.488  0.133  0.114   1.525   0.174   0.157   0.983
+3647            Shreyas Iyer  17.0  137.524  0.120  0.099   1.273   0.190   0.182   0.839
+2490          Mohammad Nawaz   8.0   64.071  0.154  0.087   1.073  -0.069   0.807   0.704
+4904          Kamindu Mendis   8.0   68.714  0.124  0.081   0.968   0.096   0.880   0.698
+4106          Daryl Mitchell  10.0   62.633  0.084  0.081   0.968   0.155   0.561   0.683
+2921            Fakhar Zaman  10.0   62.957  0.080  0.070   0.785   0.314   1.011   0.666
+4708             Rinku Singh  13.0   93.099  0.114  0.074   0.848   0.235   0.570   0.636
+4986           Rovman Powell  19.0  128.571  0.073  0.066   0.718   0.237   1.304   0.632
+838            Glenn Maxwell  14.0   89.622  0.077  0.080   0.954   0.113   0.044   0.611
+6819        Yashasvi Jaiswal  20.0  103.689  0.065  0.065   0.711   0.392   0.009   0.545
+5553               Phil Salt  15.0   82.396  0.066  0.079   0.946  -0.004  -0.266   0.540
+
+=== BOWL ===
+    pressure component zr_bowl : mu -0.0164, between-player SD tau 0.0552, median shrink factor (eligible) 0.69
+    pressure component zw_bowl : mu +0.0014, between-player SD tau 0.0176, median shrink factor (eligible) 0.31
+    baseline (runs value, pooled ordinary chase + first-innings balls): tau 0.0398, median weight per eligible player 195.6 vs pressure 81.4; uplift tau 0.0532, median shrink factor 0.26, eligible players with no baseline balls 0
+    consistency hit: league rate 0.444, between-player SD 0.078
+    consistency dis: league rate 0.210, between-player SD 0.069
+    players with any pressure ball 585 | eligible 103
+    reliability P raw    : random match-halves r = +0.25 (SD 0.06 over 40 splits, 0 degenerate) | early vs late matches r = +0.21
+    reliability P shrunk : random match-halves r = +0.33 (SD 0.05 over 40 splits, 0 degenerate) | early vs late matches r = +0.37
+    reliability RATING   : random match-halves r = +0.31 (SD 0.06 over 40 splits, 0 degenerate) | early vs late matches r = +0.35
+    (check: z shrunk as ONE number) P shrunk: random halves r = +0.26, 0/40 splits degenerate (tau collapsed to 0) | early vs late r = +0.30
+    top 15 by rating (eligible):
+                       player   app        W  P_raw   P_eb  zeta_P  zeta_C  zeta_U  rating
+bowler_id                                                                                 
+4722              Rashid Khan  29.0  195.619  0.104  0.086   1.744   1.063   0.784   1.444
+781              Sunil Narine  20.0  132.354  0.101  0.090   1.813   0.657   0.766   1.361
+3644            Kuldeep Yadav  17.0  148.745  0.111  0.071   1.489   0.835   0.860   1.230
+830            Josh Hazlewood  21.0  139.769  0.097  0.063   1.353   0.810   0.319   1.087
+4692          Lockie Ferguson  12.0   61.441  0.104  0.058   1.253   0.689   1.151   1.074
+2490           Mohammad Nawaz  16.0   92.883  0.097  0.049   1.109   0.899   1.133   1.049
+1758          Patrick Cummins  12.0   55.828  0.084  0.045   1.029   0.965   0.831   0.990
+2876               Axar Patel  30.0  198.796  0.063  0.049   1.101   0.717   0.778   0.953
+6669              Mohsin Khan  13.0   81.363  0.080  0.057   1.237   0.536   0.500   0.953
+4219            Krunal Pandya  17.0  119.685  0.075  0.058   1.264   0.362   0.681   0.935
+4101         Mitchell Santner  22.0  107.374  0.069  0.047   1.076   0.574   0.832   0.901
+6450         Mujeeb Ur Rahman  11.0   63.983  0.077  0.046   1.059   0.634   0.336   0.859
+3276           Gudakesh Motie  11.0   90.026  0.074  0.040   0.945   0.476   0.922   0.802
+2984            Sikandar Raza  12.0   59.973  0.036  0.042   0.992   0.446   0.662   0.795
+6256       Varun Chakravarthy  25.0  163.583  0.072  0.041   0.969   0.568   0.201   0.772

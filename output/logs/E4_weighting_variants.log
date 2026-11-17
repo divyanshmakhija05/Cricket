@@ -1,0 +1,21 @@
+(1) DOUBLE-COUNTING CHECK (all chase balls with estimation weight PI^2)
+  corr(|VA|, leverage index) = 0.58; SD of raw VA by pressure band: (0.5, 0.75] 0.035, (0.75, 0.9] 0.044, (0.9, 1.0] 0.098
+  raw VA x PI^2 weight             top-10% balls (10% of the sample) carry 53% of total influence | effective n of weights 49,380 of 88,884
+  raw VA x leverage weight         top-10% balls (10% of the sample) carry 72% of total influence | effective n of weights 34,096 of 88,884
+  z x PI^2 weight (PRIMARY)        top-10% balls (10% of the sample) carry 30% of total influence | effective n of weights 49,380 of 88,884
+
+(2) REPEATABILITY OF DEFINITIONS (random match-halves r | early-vs-late r)
+role                                                   definition  random_halves_r   sd  degenerate_splits  early_vs_late_r
+ bat                                   A  z, one-number shrinkage             0.18 0.09                  0             0.01
+ bat B  z, runs and wicket components shrunk separately (PRIMARY)             0.31 0.08                  0             0.07
+ bat                                 C  runs-value component only             0.35 0.08                  0             0.17
+ bat        D  raw WP VA (no standardising), one-number shrinkage             0.15 0.60                 12            -0.02
+ bat                              E  z clipped at +-3, components             0.28 0.08                  0             0.09
+bowl                                   A  z, one-number shrinkage             0.26 0.05                  0             0.30
+bowl B  z, runs and wicket components shrunk separately (PRIMARY)             0.33 0.05                  0             0.37
+bowl                                 C  runs-value component only             0.42 0.06                  0             0.42
+bowl        D  raw WP VA (no standardising), one-number shrinkage             0.16 0.06                  0             0.17
+bowl                              E  z clipped at +-3, components             0.33 0.05                  0             0.36
+
+Reading: the wicket/residual part of z carries little between-player signal (tau 0.02 vs 0.06 for the runs part), so separate shrinkage damps it heavily (median shrink factor 0.2-0.3).
+Shrinking the two parts separately is at least as repeatable as any alternative and, unlike one-number shrinkage, is stable; raw win-probability change is clearly worse.

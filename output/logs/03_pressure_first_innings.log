@@ -1,0 +1,48 @@
+first-innings balls: 96,683 from 777 matches
+
+WIN-CURVE f(T): P(win) = logistic(-0.05 + 0.035 x (total - venue par)); a 10-run beat of par is worth about 8.8 points of win probability
+STRUCTURAL WIN-PROBABILITY, out-of-fold by match: logloss 0.6275 | AUC 0.702   (generic logistic model in 02: logloss 0.6318, AUC 0.696)
+
+SANITY: does leverage now behave like pressure? (legal balls)
+mean leverage by over group:
+over_grp
+1-4      0.0125
+5-8      0.0112
+9-12     0.0099
+13-16    0.0103
+17-18    0.0119
+19-20    0.0119
+mean leverage by |projected total - par| (runs) in overs 13-20:
+near
+<5       0.0134
+5-10     0.0133
+10-20    0.0125
+20-40    0.0106
+>40      0.0066
+
+top-10% first-innings balls: 9,250 | median balls_left 24 | median wickets in hand 6 | median |proj - par| 6.9 runs
+phase mix: {'death': 0.7, 'powerplay': 0.28, 'middle': 0.02}
+by over (share of high-pressure balls): {1: 0.043, 2: 0.042, 3: 0.042, 4: 0.047, 5: 0.051, 6: 0.058, 7: 0.008, 8: 0.004, 9: 0.002, 10: 0.002, 11: 0.001, 12: 0.001, 13: 0.0, 16: 0.173, 17: 0.152, 18: 0.134, 19: 0.11, 20: 0.128}
+
+VALIDATION: league-wide first-innings outcomes by pressure band
+            balls      SR  wkt_per_100  boundary_pct  dot_pct  economy
+band                                                                  
+0-50      46248.0  140.32         5.36         17.28    26.16     8.42
+50-75     23124.0  138.96         5.24         20.38    33.82     8.34
+75-90     13874.0  140.93         5.62         20.12    33.00     8.46
+90-95      4625.0  146.44         5.88         20.48    30.29     8.79
+95-97.5    2312.0  148.96         6.10         19.64    26.95     8.94
+97.5-100   2313.0  168.83         8.47         22.05    19.07    10.13
+
+WITHIN PHASE, competitive states (0.25<=WP<=0.75): high (top 10%) vs ordinary (25th-75th pct)
+                      balls      SR  wkt_per_100  boundary_pct  dot_pct  economy
+phase     grp                                                                   
+death     high       6356.0  166.80         7.63         21.73    19.38    10.01
+          ordinary   4702.0  163.80         9.25         22.39    20.37     9.83
+middle    high        171.0  110.53         4.09         13.45    40.35     6.63
+          ordinary  23065.0  132.01         4.67         15.07    25.99     7.92
+powerplay high       2623.0  119.90         3.74         18.30    43.96     7.20
+          ordinary  16568.0  137.64         4.63         22.25    39.36     8.26
+
+COLLAPSE CHECK: powerplay balls with 3+ wickets already down: n=1,520, mean pressure percentile 0.53 (0.50 = average)
+                 overs 16-20 with projection within 10 runs of par: mean pressure percentile 0.92

@@ -1,0 +1,134 @@
+ROBUSTNESS: 30 variants of the primary rating. Spearman = rank correlation with PRIMARY among players eligible in both; overlap = size of top-10 intersection.
+                                                    variant  bat_spearman  bat_top10_overlap  bowl_spearman  bowl_top10_overlap
+                                                    PRIMARY          1.00                 10           1.00                  10
+        previous primary: high-pressure balls only (PI>0.5)          0.94                  8           0.93                   9
+                           pressure weight linear (power 1)          0.99                  8           0.99                   9
+                            pressure weight cubic (power 3)          0.99                  9           1.00                  10
+                      hard cut: top 25% balls, equal weight          0.93                  7           0.95                   8
+                      hard cut: top 10% balls, equal weight          0.80                  7           0.85                   7
+                                    weight = leverage index          0.89                  5           0.94                   8
+                             weight = PI^2 x leverage index          0.83                  4           0.90                   9
+          pressure weight from PI>0.5 only (stricter start)          0.96                  9           0.97                   8
+                         run-rate-tight pressure definition          0.93                  6           0.91                   6
+          composite pressure index (leverage+damage+stress)          0.99                  9           1.00                  10
+                          associate-nation T20Is weight 1.0          1.00                  9           1.00                  10
+                            associate-nation T20Is excluded          1.00                  7           1.00                  10
+                 first-innings layer OFF (chase balls only)          0.99                  9           0.98                  10
+                              first-innings layer weight x2          0.99                  8           0.99                   7
+                             baseline from chase balls only          1.00                  9           1.00                  10
+                                    shrinkage x0.5 (weaker)          0.99                  7           1.00                   9
+                                shrinkage x2 (weaker still)          0.99                  9           1.00                   9
+                                 shrinkage x0.25 (stronger)          0.98                  6           0.99                   8
+                                   no shrinkage (raw means)          0.95                  7           0.97                   8
+      consistency: disaster by appearance mean z (previous)          0.99                  9           0.99                  10
+                               rating = pressure level only          0.99                  9           0.98                   9
+                                     rating = 0.7 P + 0.3 C          0.99                  9           1.00                  10
+                                     rating = 0.5 P + 0.5 C          0.99                  8           0.99                   9
+                             rating = 0.4 P + 0.3 C + 0.3 U          0.96                  8           0.98                   9
+                z shrunk as one number (no component split)          0.96                  8           0.98                   8
+eligibility stricter (>=12 app, W>=40, >=25 top-band balls)          0.99                  4           1.00                   9
+    eligibility looser (>=6 app, W>=15, >=8 top-band balls)          1.00                  9           1.00                   9
+                                 no top-band exposure floor          1.00                  9           1.00                  10
+                                   value = raw WP VA (no z)          0.86                  8           0.90                   9
+                        opposition-adjusted (two-way ridge)          0.96                  7           0.98                   8
+
+median across variants (excluding primary): bat Spearman 0.99, top-10 overlap 8.0 | bowl Spearman 0.99, top-10 overlap 9.0
+
+BAT: how often each player is in the top 10 across the 30 variants
+                      player  in_top10_of_variants  primary_rank  share_of_variants
+striker_id                                                                         
+4260        Heinrich Klaasen                    30             1               1.00
+6396               Tim David                    30             5               1.00
+768          Reeza Hendricks                    28             4               0.93
+8101         Ashutosh Sharma                    27             3               0.90
+1699        Suryakumar Yadav                    27             2               0.90
+3647            Shreyas Iyer                    26             6               0.87
+2490          Mohammad Nawaz                    20             7               0.67
+4904          Kamindu Mendis                    16             8               0.53
+4106          Daryl Mitchell                    16             9               0.53
+4708             Rinku Singh                    14            11               0.47
+2921            Fakhar Zaman                    11            10               0.37
+838            Glenn Maxwell                    10            13               0.33
+4986           Rovman Powell                     9            12               0.30
+6281         Abhishek Sharma                     8            18               0.27
+5553               Phil Salt                     3            15               0.10
+4722             Rashid Khan                     3            23               0.10
+6819        Yashasvi Jaiswal                     2            14               0.07
+143           Dinesh Karthik                     2            22               0.07
+
+BOWL: how often each player is in the top 10 across the 30 variants
+                       player  in_top10_of_variants  primary_rank  share_of_variants
+bowler_id                                                                           
+4722              Rashid Khan                    30             1               1.00
+781              Sunil Narine                    30             2               1.00
+4692          Lockie Ferguson                    30             5               1.00
+2490           Mohammad Nawaz                    30             6               1.00
+3644            Kuldeep Yadav                    29             3               0.97
+830            Josh Hazlewood                    29             4               0.97
+1758          Patrick Cummins                    23             7               0.77
+2876               Axar Patel                    23             8               0.77
+6669              Mohsin Khan                    23             9               0.77
+4219            Krunal Pandya                    18            10               0.60
+4101         Mitchell Santner                     9            11               0.30
+6450         Mujeeb Ur Rahman                     6            12               0.20
+6256       Varun Chakravarthy                     6            15               0.20
+2933           Jasprit Bumrah                     6            16               0.20
+3276           Gudakesh Motie                     3            13               0.10
+2984            Sikandar Raza                     3            14               0.10
+5979              Abrar Ahmed                     0            17               0.00
+7325            Harpreet Brar                     0            18               0.00
+
+TEMPORAL STABILITY: ratings from the earlier half of matches vs the later half (split at the median match date)
+  split date 2024-05-07
+  bat  P_eb    n= 85: Pearson 0.07, Spearman 0.09
+  bat  rating  n= 85: Pearson 0.10, Spearman 0.09
+  bowl P_eb    n= 97: Pearson 0.37, Spearman 0.41
+  bowl rating  n= 97: Pearson 0.35, Spearman 0.40
+
+IPL vs T20I AGREEMENT (players with total estimation weight >= 20 in BOTH competitions; raw pressure z)
+  bat  n= 67: Pearson 0.11, Spearman 0.13
+  bowl n= 77: Pearson 0.32, Spearman 0.35
+
+BOOTSTRAP BY MATCH: 500 resamples of the 777 matches (with replacement); the whole rating is rebuilt each time
+
+BAT (top 16 by primary rank)
+                      player  primary_rank  p_top10  p_top5  p_eligible  median_rank  rank_p05  rank_p95
+striker_id                                                                                              
+4260        Heinrich Klaasen             1     0.77    0.57        0.98          5.0      1.00     23.00
+1699        Suryakumar Yadav             2     0.62    0.34        1.00          8.0      2.00     28.00
+8101         Ashutosh Sharma             3     0.51    0.40        0.68          4.0      1.00     26.30
+768          Reeza Hendricks             4     0.56    0.28        0.83          7.0      2.00     25.00
+6396               Tim David             5     0.56    0.42        1.00          8.0      1.00     46.05
+3647            Shreyas Iyer             6     0.44    0.22        0.98         12.0      2.00     40.55
+2490          Mohammad Nawaz             7     0.32    0.23        0.53          7.0      1.00     44.75
+4904          Kamindu Mendis             8     0.26    0.14        0.49          9.0      1.15     41.85
+4106          Daryl Mitchell             9     0.23    0.11        0.77         18.0      4.00     45.90
+2921            Fakhar Zaman            10     0.26    0.12        0.55         11.0      2.00     34.00
+4708             Rinku Singh            11     0.43    0.20        0.95         11.0      2.00     36.00
+4986           Rovman Powell            12     0.29    0.08        1.00         15.0      4.00     41.05
+838            Glenn Maxwell            13     0.28    0.14        0.86         17.5      2.00     58.65
+6819        Yashasvi Jaiswal            14     0.09    0.03        0.61         19.0      6.00     38.50
+5553               Phil Salt            15     0.12    0.03        0.68         24.0      6.00     48.00
+6931         Pathum Nissanka            16     0.15    0.02        0.90         18.0      7.00     35.00
+  expected number of the primary top-10 that stay in a resampled top-10: 4.5 of 10
+
+BOWL (top 16 by primary rank)
+                       player  primary_rank  p_top10  p_top5  p_eligible  median_rank  rank_p05  rank_p95
+bowler_id                                                                                                
+4722              Rashid Khan             1     0.75    0.44        1.00          6.0      1.00     20.00
+781              Sunil Narine             2     0.59    0.34        1.00          9.0      1.00     33.00
+3644            Kuldeep Yadav             3     0.71    0.47        1.00          6.0      1.00     22.00
+830            Josh Hazlewood             4     0.57    0.29        1.00          9.0      1.00     37.00
+4692          Lockie Ferguson             5     0.63    0.45        0.87          5.0      1.00     27.00
+2490           Mohammad Nawaz             6     0.50    0.33        0.82          8.0      1.00     36.00
+1758          Patrick Cummins             7     0.43    0.25        0.71          8.0      1.00     24.00
+2876               Axar Patel             8     0.36    0.10        1.00         13.0      3.95     33.00
+6669              Mohsin Khan             9     0.34    0.20        0.90         14.0      2.00     53.00
+4219            Krunal Pandya            10     0.32    0.14        0.98         16.0      2.00     51.00
+4101         Mitchell Santner            11     0.38    0.20        0.97         14.0      2.00     38.00
+6450         Mujeeb Ur Rahman            12     0.31    0.11        0.84         13.0      3.85     33.15
+3276           Gudakesh Motie            13     0.29    0.16        0.84         14.0      2.00     47.10
+2984            Sikandar Raza            14     0.19    0.10        0.59         16.0      3.00     47.30
+6256       Varun Chakravarthy            15     0.35    0.17        1.00         15.0      2.00     42.10
+2933           Jasprit Bumrah            16     0.08    0.02        1.00         29.0      8.00     59.00
+  expected number of the primary top-10 that stay in a resampled top-10: 5.2 of 10

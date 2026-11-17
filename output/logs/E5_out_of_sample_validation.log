@@ -1,0 +1,26 @@
+E5 OUT-OF-SAMPLE VALIDATION: 60 random splits of the 777 matches; prediction of held-out high-pressure runs value; players with >=3 train matches and held-out weight >= 8
+
+BATTERS (153 players in the last split)
+                                                      estimator  held-out corr  gain vs previous  better in % splits
+   previous primary: high-pressure balls only (PI>0.5, power 2)          0.156             0.000                   0
+                                         window PI>0.4, power 2          0.168             0.012                  87
+                                        window PI>0.25, power 2          0.187             0.031                  95
+                                         window PI>0.1, power 2          0.203             0.048                  97
+                        ALL chase balls, weight PI^2  (adopted)          0.217             0.061                  97
+                                        window PI>0.25, power 1          0.208             0.052                  97
+                                   ALL chase balls, weight PI^3          0.201             0.045                  97
+general-ability prior (Fay-Herriot) on high-pressure balls only          0.175             0.019                  75
+
+BOWLERS (142 players in the last split)
+                                                      estimator  held-out corr  gain vs previous  better in % splits
+   previous primary: high-pressure balls only (PI>0.5, power 2)          0.191             0.000                   0
+                                         window PI>0.4, power 2          0.200             0.008                  87
+                                        window PI>0.25, power 2          0.206             0.015                  85
+                                         window PI>0.1, power 2          0.210             0.019                  85
+                        ALL chase balls, weight PI^2  (adopted)          0.212             0.021                  85
+                                        window PI>0.25, power 1          0.214             0.023                  82
+                                   ALL chase balls, weight PI^3          0.205             0.014                  82
+general-ability prior (Fay-Herriot) on high-pressure balls only          0.192             0.001                  47
+
+Reading: widening the window (more chase balls, weighted by PI^power) helps consistently; a general-ability prior does not. (First-innings layer: see E6.)
+The window is chosen at the plateau of a simple rule (weight = PI^2 over all chase balls), not at a tuned maximum.

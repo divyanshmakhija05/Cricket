@@ -1,0 +1,29 @@
+matches by tier: {'T20I_Full': 373, 'IPL': 354, 'T20I_Assoc': 50}
+(1) VENUE PAR: how well does each predict a match's first-innings total? (RMSE in runs, lower is better)
+  tier mean only        : 35.96
+  raw leave-one-out avg : 36.91   <- overfits small venues
+  shrunk (k=7) LOO par  : 35.16
+
+(2) WIN-PROBABILITY MODELS, out-of-fold by match (logloss lower / AUC higher is better)
+  innings 1: current features logloss 0.6329 AUC 0.694  ->  +venue par features logloss 0.6329 AUC 0.695
+  innings 2: current features logloss 0.4005 AUC 0.897  ->  +venue par features logloss 0.3990 AUC 0.898
+
+    innings-1 leverage (new model): median 0.0117, p90 0.0159, max 0.0572
+    top-10% innings-1 balls: median balls_left 108, median wkts in hand 9, phase mix {'powerplay': 0.76, 'death': 0.23, 'middle': 0.01}
+          balls      SR  wk100
+band                          
+0-50    46248.0  145.97   5.57
+50-75   23124.0  140.04   5.48
+75-90   13874.0  137.28   5.03
+90-95    4625.0  128.54   5.06
+95-100   4625.0  125.84   6.59
+
+(3) COMPOSITE PRESSURE INDEX (chase balls: 85,138).  Correlations between components (Spearman):
+    L vs D_bat 0.91 | L vs D_bowl 0.98 | L vs S -0.12
+       index  rho_vs_L  top10_median_WP  top10_pct_WP_below_10  wk100_top2p5  wk100_mid  SR_top2p5  econ_top2p5  econ_mid
+        PI_L      1.00             0.50                    2.4          11.1        4.8        165         9.91      8.06
+       PI_LD      0.99             0.54                    0.0           9.4        5.0        146         8.78      8.13
+       PI_LS      0.99             0.46                    3.6          10.9        4.9        176        10.57      8.08
+ PI_full_bat      0.99             0.49                    0.4           9.7        4.9        155         9.30      8.09
+PI_full_bowl      0.98             0.44                    3.4          10.8        5.0        177        10.61      8.10
+    (WP below 10% = already-lost chase. A good PRESSURE index should keep this near 0.)

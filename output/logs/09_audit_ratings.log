@@ -1,0 +1,46 @@
+[PASS] VA telescopes: sum of per-ball WP changes = final result - starting WP in every chase  -- max error 2.22e-16
+[PASS] one row per chase ball, no duplicates  -- 88,884 rows
+[PASS] no run-out / non-bowler wicket is credited to a bowler
+[PASS] wides and no-balls never attributed to the batter
+[PASS] byes / leg-byes attributed to nobody
+[PASS] run-outs on wides / no-balls attributed to nobody
+[PASS] centred VA has mean 0 in every standardisation cell (competition x phase x pressure bin)  -- max |mean| 1.6e-08; 54 cells, smallest 377 balls
+[PASS] every standardisation cell has >= 400 clean legal balls  -- (cells are built on all legal balls, >= 400 before attribution filters)
+[PASS] wides and no-balls are scored against the clean legal baseline and not centred (full penalty)  -- 3,746 balls
+[PASS] z has unit SD in every pressure bin  -- per competition SD IPL 1.00, T20I 1.00
+[PASS] z = runs part + wicket part exactly (batters and bowlers)  -- (tolerance 1e-4: tables are saved with 6 significant digits)
+[PASS] bowler credit is the mirror of batter credit on normal balls
+[PASS] pressure weight within [0,1]; zero at or below the median
+[PASS] baseline balls and pressure balls are disjoint
+[PASS] baseline balls are competitive (0.10<=WP<=0.90) and below median pressure
+[PASS] opposition weight only 0.7 on associate-tier matches, 1.0 otherwise
+[PASS] modelling set excludes DLS / tied / no-result matches  -- enforced in stage 02 (see its log)
+[PASS] first-innings layer: weight lambda is the BSS ratio, between 0 and 1  -- lambda = 0.254
+[PASS] first-innings rows never count for eligibility / consistency / uplift (pw = 0) and carry weight pe = lambda x PI^2
+[PASS] first-innings attribution: no run-out to a bowler, no wide/no-ball to a batter
+[PASS] first-innings z has mean ~0 overall and ordinary baseline balls are low pressure  -- mean z -0.0039
+[PASS] [bat] eligible players have complete ratings  -- 89 eligible
+[PASS] [bat] eligibility floors hold
+[PASS] [bat] final list has 10 distinct players in rating order
+[PASS] [bat] rating reproduces exactly from a fresh build (deterministic)
+[PASS] [bat] every final player id exists in competition_team_player_mapping.csv
+[PASS] [bat] dropdown names unambiguous (no other player id with the same name)
+[PASS] [bat] shrinkage never moves a player outside the raw/prior range
+[PASS] [bat] floor guard: every top-10 player has >= 15 top-band balls
+[PASS] [bowl] eligible players have complete ratings  -- 103 eligible
+[PASS] [bowl] eligibility floors hold
+[PASS] [bowl] final list has 10 distinct players in rating order
+[PASS] [bowl] rating reproduces exactly from a fresh build (deterministic)
+[PASS] [bowl] every final player id exists in competition_team_player_mapping.csv
+[WARN] [bowl] dropdown names unambiguous (no other player id with the same name)  -- ambiguous: Rashid Khan
+[PASS] [bowl] shrinkage never moves a player outside the raw/prior range
+[PASS] [bowl] floor guard: every top-10 player has >= 15 top-band balls
+[PASS] player appears in both lists only as the same person (same id)  -- shared ids: Mohammad Nawaz
+[PASS] [bat] bootstrap / robustness files are current (same players in the same order as the ratings table, no stale files)
+[PASS] [bat] top-10 frequency table matches the current primary ranks
+[PASS] [bat] final list agrees with the current rating order
+[PASS] [bowl] bootstrap / robustness files are current (same players in the same order as the ratings table, no stale files)
+[PASS] [bowl] top-10 frequency table matches the current primary ranks
+[PASS] [bowl] final list agrees with the current rating order
+
+43 PASS, 1 WARN, 0 FAIL

@@ -1,0 +1,108 @@
+
+NEAR-MISS ELIGIBILITY AUDIT (batters): missed a floor by <= 2 appearances / 5 weight / 3 top-band balls; would-be rank among eligible players
+                       player  app      W  hp_balls  rating  would_rank
+striker_id                                                             
+37052              Naman Dhir    7  27.41        18    0.71           7
+2573               Evin Lewis    6  36.29        24    0.58          14
+8221             Nitish Reddy    7  33.97        18    0.35          27
+3782          M Shahrukh Khan    7  45.49        48    0.27          30
+2003        Bhanuka Rajapaksa    7  41.18        25    0.27          30
+7544           Venkatesh Iyer    7  66.29        50    0.14          36
+  highest-rated ineligible: Vaibhav Sooryavanshi (app 9, W 35, top-band 1, rating 1.94); Urvil Patel (app 0, W 2, top-band 0, rating 1.23); Ayush Mhatre (app 2, W 22, top-band 13, rating 0.96)
+
+BATTERS - FINAL TOP 10 (primary rating order)
+            rank     dropdown_name  rating  app  p_top10  median_rank  in_top10_of_variants  same_name_other_ids
+striker_id                                                                                                      
+4260           1  Heinrich Klaasen    1.27   16     0.77          5.0                  30.0                    0
+1699           2  Suryakumar Yadav    1.03   27     0.62          8.0                  27.0                    0
+8101           3   Ashutosh Sharma    0.99    9     0.51          4.0                  27.0                    0
+768            4   Reeza Hendricks    0.99   11     0.56          7.0                  28.0                    0
+6396           5         Tim David    0.98   22     0.56          8.0                  30.0                    0
+3647           6      Shreyas Iyer    0.84   17     0.44         12.0                  26.0                    0
+2490           7    Mohammad Nawaz    0.70    8     0.32          7.0                  20.0                    0
+4904           8    Kamindu Mendis    0.70    8     0.26          9.0                  16.0                    0
+4106           9    Daryl Mitchell    0.68   10     0.23         18.0                  16.0                    0
+2921          10      Fakhar Zaman    0.67   10     0.26         11.0                  11.0                    0
+  rating gaps between neighbours (ranks 1-11): 0.24, 0.04, 0.00, 0.00, 0.14, 0.13, 0.01, 0.01, 0.02, 0.03, 0.00
+  EVIDENCE (high-pressure balls = top 10% of chase pressure; 'expected' = league average in the SAME pressure bins):
+                  hp_balls_legal  hp_SR  hp_SR_expected  hp_dismissals_per100  hp_dismissals_per100_expected  hp_boundary_pct  hp_boundary_pct_expected
+name                                                                                                                                                   
+Heinrich Klaasen            58.0  222.4           164.4                   8.6                            7.6             34.5                      21.9
+Suryakumar Yadav           130.0  185.4           157.9                   6.9                            7.2             25.4                      20.5
+Ashutosh Sharma             65.0  213.8           169.7                   3.1                            7.8             30.8                      22.8
+Reeza Hendricks             58.0  213.8           146.6                   1.7                            7.8             31.0                      18.2
+Tim David                  131.0  213.0           165.5                   4.6                            8.4             29.8                      22.0
+Shreyas Iyer                69.0  220.3           159.7                   5.8                            7.1             30.4                      21.0
+Mohammad Nawaz              63.0  188.9           145.4                   1.6                            7.6             25.4                      17.8
+Kamindu Mendis              67.0  192.5           153.7                   3.0                            8.4             25.4                      19.7
+Daryl Mitchell              38.0  176.3           147.6                  10.5                            7.9             23.7                      18.5
+Fakhar Zaman                18.0  238.9           150.3                   5.6                            8.2             33.3                      18.9
+  usual level (ordinary competitive balls) vs expected, and all pressure balls:
+                  ordinary_balls  ordinary_SR  ordinary_SR_expected  pressure_balls  pressure_SR  pressure_SR_expected
+name                                                                                                                  
+Heinrich Klaasen            42.0        119.0                 139.1           249.0        173.5                 146.3
+Suryakumar Yadav           132.0        144.7                 138.6           608.0        170.4                 143.3
+Ashutosh Sharma              4.0         25.0                 144.8           108.0        197.2                 159.5
+Reeza Hendricks             44.0        177.3                 130.8           275.0        165.8                 134.4
+Tim David                   29.0        186.2                 132.2           279.0        184.6                 150.2
+Shreyas Iyer                82.0        181.7                 141.9           433.0        153.3                 144.7
+Mohammad Nawaz               3.0        200.0                 130.9           116.0        181.0                 139.0
+Kamindu Mendis              11.0        200.0                 134.6           116.0        163.8                 144.8
+Daryl Mitchell              32.0        137.5                 136.4           187.0        154.5                 137.0
+Fakhar Zaman                33.0        112.1                 130.6           223.0        149.8                 132.8
+  NAME CHECK: all 10 ids found in the mapping file, names unambiguous
+
+NEAR-MISS ELIGIBILITY AUDIT (bowlers): missed a floor by <= 2 appearances / 5 weight / 3 top-band balls; would-be rank among eligible players
+                   player  app      W  hp_balls  rating  would_rank
+bowler_id                                                          
+34485      Sufiyan Muqeem    6  53.93        41    1.16           4
+6643         Hasan Mahmud    7  26.22        16    0.50          19
+7344       Shoriful Islam    7  30.69        26    0.43          24
+3323        Jimmy Neesham    6  40.12        43    0.27          36
+25048         Umran Malik    6  54.88        39    0.24          38
+4807        Joshua Little    6  48.38        34    0.21          40
+  highest-rated ineligible: Sufiyan Muqeem (app 6, W 54, top-band 41, rating 1.16); Mayank Yadav (app 4, W 22, top-band 16, rating 0.98); Tendai Chatara (app 2, W 7, top-band 6, rating 0.91)
+
+BOWLERS - FINAL TOP 10 (primary rating order)
+           rank    dropdown_name  rating  app  p_top10  median_rank  in_top10_of_variants  same_name_other_ids
+bowler_id                                                                                                     
+4722          1      Rashid Khan    1.44   29     0.75          6.0                  30.0                    1
+781           2     Sunil Narine    1.36   20     0.59          9.0                  30.0                    0
+3644          3    Kuldeep Yadav    1.23   17     0.71          6.0                  29.0                    0
+830           4   Josh Hazlewood    1.09   21     0.57          9.0                  29.0                    0
+4692          5  Lockie Ferguson    1.07   12     0.63          5.0                  30.0                    0
+2490          6   Mohammad Nawaz    1.05   16     0.50          8.0                  30.0                    0
+1758          7  Patrick Cummins    0.99   12     0.43          8.0                  23.0                    0
+2876          8       Axar Patel    0.95   30     0.36         13.0                  23.0                    0
+6669          9      Mohsin Khan    0.95   13     0.34         14.0                  23.0                    0
+4219         10    Krunal Pandya    0.93   17     0.32         16.0                  18.0                    0
+  rating gaps between neighbours (ranks 1-11): 0.08, 0.13, 0.14, 0.01, 0.03, 0.06, 0.04, 0.00, 0.02, 0.03, 0.04
+  EVIDENCE (high-pressure balls = top 10% of chase pressure; 'expected' = league average in the SAME pressure bins):
+                 hp_balls_legal  hp_economy  hp_economy_expected  hp_wickets_per100  hp_wickets_per100_expected  hp_dot_pct  hp_dot_pct_expected  hp_wide_nb_pct
+name                                                                                                                                                            
+Rashid Khan               101.0         7.4                  9.2               12.9                         6.9        35.6                 27.9             1.0
+Sunil Narine               82.0         6.7                  9.5                8.5                         6.2        41.5                 26.6             0.0
+Kuldeep Yadav             104.0         8.8                  9.3                6.7                         6.3        24.0                 27.3             3.8
+Josh Hazlewood             88.0         7.8                  9.8               13.6                         7.0        42.0                 26.8             5.7
+Lockie Ferguson            38.0         5.8                  9.3               10.5                         6.8        47.4                 27.5             7.9
+Mohammad Nawaz             28.0         6.0                  8.7               21.4                         7.5        39.3                 29.6             3.6
+Patrick Cummins            23.0         7.6                  9.8               21.7                         7.4        39.1                 27.4             8.7
+Axar Patel                 97.0         7.8                  9.1                7.2                         7.2        32.0                 28.7             2.1
+Mohsin Khan                55.0         6.1                  9.7               12.7                         6.5        47.3                 26.3             7.3
+Krunal Pandya              54.0         7.9                  9.5               11.1                         6.3        33.3                 26.7             7.4
+  usual level (ordinary competitive balls) vs expected, and all pressure balls:
+                 ordinary_balls  ordinary_economy  ordinary_economy_expected  pressure_balls  pressure_economy  pressure_economy_expected
+name                                                                                                                                     
+Rashid Khan               109.0               6.8                        8.3           529.0               6.9                        8.5
+Sunil Narine               59.0               8.3                        8.6           379.0               6.8                        8.8
+Kuldeep Yadav              35.0               7.2                        8.4           355.0               7.2                        8.8
+Josh Hazlewood             71.0               6.4                        8.5           410.0               8.2                        8.6
+Lockie Ferguson            73.0               8.7                        8.3           222.0               6.7                        8.4
+Mohammad Nawaz             74.0               7.7                        7.8           289.0               6.8                        7.9
+Patrick Cummins            75.0              11.0                        8.6           232.0               6.8                        8.5
+Axar Patel                 90.0               7.0                        8.1           607.0               7.2                        8.3
+Mohsin Khan                25.0               6.2                        8.6           237.0               7.4                        8.8
+Krunal Pandya              67.0               9.4                        8.6           341.0               6.7                        8.8
+  NAME CHECK: ATTENTION ->           dropdown_name  name_in_mapping  name_variants  same_name_other_ids
+bowler_id                                                                   
+4722        Rashid Khan             True              1                    1

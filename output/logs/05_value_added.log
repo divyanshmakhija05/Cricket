@@ -1,0 +1,95 @@
+chase balls in modelling set: 88,884 from 777 matches
+run-outs / non-bowler wickets on wides, no-balls and byes (excluded for both players): 3
+
+attribution of chase balls:
+kind
+normal        83521
+wide           3381
+bye_lb         1395
+noball          365
+runout_etc      218
+retire            4
+batter-attributed 0.941 | bowler-attributed 0.982
+phase-aware standardisation: 54 cells (--phase-aware)
+
+bin reference (mean and SD of VA on clean legal balls), IPL / T20I:
+   comp_group      phase  pbin  bin_mean  bin_sd  bin_n
+0         IPL      death     0    0.0006  0.0242   1708
+1         IPL      death     1   -0.0000  0.0026   1119
+2         IPL      death     2    0.0016  0.0376    732
+3         IPL      death     3    0.0004  0.0148    861
+4         IPL      death     4    0.0016  0.0322   1032
+5         IPL      death     5    0.0026  0.0547    493
+6         IPL      death     6    0.0031  0.0724    729
+7         IPL      death     7    0.0022  0.0940    642
+8         IPL      death     8    0.0387  0.2155    446
+9         IPL     middle     0    0.0000  0.0006   1266
+10        IPL     middle     1   -0.0001  0.0037   1891
+11        IPL     middle     2   -0.0001  0.0090   2254
+12        IPL     middle     3    0.0005  0.0136   1983
+13        IPL     middle     4    0.0004  0.0209   1797
+14        IPL     middle     5   -0.0002  0.0275   1519
+15        IPL     middle     6    0.0005  0.0327   1159
+16        IPL     middle     7    0.0004  0.0373   1568
+17        IPL     middle     8   -0.0006  0.0452   3077
+18        IPL     middle     9    0.0005  0.0582   1939
+19        IPL  powerplay     0    0.0003  0.0036    746
+20        IPL  powerplay     1    0.0005  0.0099    914
+21        IPL  powerplay     2    0.0001  0.0172   1331
+22        IPL  powerplay     3    0.0000  0.0251   1834
+23        IPL  powerplay     4    0.0004  0.0314   2311
+24        IPL  powerplay     5    0.0007  0.0377   2590
+25        IPL  powerplay     6    0.0005  0.0431   2165
+26        IPL  powerplay     7    0.0037  0.0392    618
+27       T20I      death     0   -0.0000  0.0004   2109
+28       T20I      death     1    0.0001  0.0028   1164
+29       T20I      death     2   -0.0000  0.0067    790
+30       T20I      death     3    0.0016  0.0361    906
+31       T20I      death     4    0.0009  0.0275    699
+32       T20I      death     5    0.0035  0.0406    377
+33       T20I      death     6    0.0007  0.0530    561
+34       T20I      death     7    0.0046  0.0839    800
+35       T20I      death     8    0.0220  0.1700    870
+36       T20I     middle     0    0.0000  0.0006   2795
+37       T20I     middle     1    0.0001  0.0033   2866
+38       T20I     middle     2    0.0003  0.0085   2344
+39       T20I     middle     3    0.0001  0.0145   2340
+40       T20I     middle     4    0.0001  0.0224   1852
+41       T20I     middle     5   -0.0005  0.0299   1456
+42       T20I     middle     6    0.0006  0.0366   1249
+43       T20I     middle     7    0.0010  0.0381   1618
+44       T20I     middle     8   -0.0005  0.0466   3487
+45       T20I     middle     9   -0.0002  0.0639   1663
+46       T20I  powerplay     0   -0.0000  0.0042   1039
+47       T20I  powerplay     1   -0.0001  0.0107   1393
+48       T20I  powerplay     2    0.0004  0.0177   1632
+49       T20I  powerplay     3    0.0010  0.0228   2225
+50       T20I  powerplay     4    0.0006  0.0334   2441
+51       T20I  powerplay     5    0.0005  0.0395   3009
+52       T20I  powerplay     6    0.0004  0.0436   2633
+53       T20I  powerplay     7    0.0002  0.0467    479
+
+components: runs-value (league mean z for the runs scored, by pressure bin) + wicket/residual = z; SD of each component on pressure balls:
+  batter: runs 0.73 | wicket/residual 0.69 | z 1.01
+
+balls with pressure weight>0: 44,442 | high-pressure (top 10%): 8,889 | baseline balls: 9,153
+associate-tier balls: 5,454 (6.1%), weight 0.7
+
+check after centring (clean legal balls): max |mean VA_c| = 0.00000, SD of z in each bin = 1.00..1.00
+mean z of wides/no-balls charged to bowlers by pressure band (should be strongly negative for the bowler, rising with pressure):
+             size  mean
+PI                     
+(0.0, 0.5]   1814 -0.39
+(0.5, 0.75]   864 -0.41
+(0.75, 0.9]   525 -0.53
+(0.9, 1.0]    543 -0.58
+sanity (high-pressure legal balls): mean z_bat by runs scored / wicket
+        size  mean
+0       1801 -0.50
+1       3288 -0.12
+2        706  0.29
+3         21  0.62
+4        991  1.07
+5          3  1.20
+6        706  1.81
+wicket   656 -1.97

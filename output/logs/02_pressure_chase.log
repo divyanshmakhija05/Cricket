@@ -1,0 +1,89 @@
+modelling set: 185,567 balls, 777 matches {'T20I_Full': 373, 'IPL': 354, 'T20I_Assoc': 50}
+(excluded: no-result, DLS/rain-affected, tied/Super-Over, one-innings, OTHER_T20)
+
+outcome mix by innings/phase (0,1,2,3,4,6,W):
+  inn1 death     0.227 0.372 0.093 0.003 0.122 0.098 0.085
+  inn1 middle    0.275 0.456 0.067 0.002 0.092 0.061 0.047
+  inn1 powerplay 0.425 0.263 0.047 0.006 0.162 0.053 0.044
+  inn2 death     0.260 0.367 0.077 0.003 0.118 0.088 0.088
+  inn2 middle    0.279 0.446 0.067 0.002 0.095 0.061 0.051
+  inn2 powerplay 0.420 0.259 0.046 0.005 0.165 0.057 0.047
+  outcome model innings 1 (out-of-fold, legal balls): log-loss static phase mix 1.4997 -> state-aware 1.4893
+  outcome model innings 2 (out-of-fold, legal balls): log-loss static phase mix 1.4965 -> state-aware 1.4886
+
+WIN-PROBABILITY MODEL (5-fold, grouped by match; every number is out-of-fold)
+  innings 1: n=96,683 | logloss 0.6311, AUC 0.698, Brier 0.2203 | no-skill logloss 0.6931
+  innings 2: n=88,884 | logloss 0.3939, AUC 0.901, Brier 0.1278 | no-skill logloss 0.6923
+
+chase leverage thresholds: median 0.0147 | top10% >= 0.0314 (LI 1.8) | top2.5% >= 0.0588 (LI 3.4)
+high-pressure share of chase balls by phase:
+phase
+death        0.288
+middle       0.091
+powerplay    0.000
+
+VALIDATION: league-wide chase outcomes by pressure band (percentile of leverage)
+            balls      SR  wkt_per_100  boundary_pct  dot_pct  economy  median_wp
+bin                                                                              
+0-50      42628.0  137.53         5.77         18.54    30.90     8.25       0.16
+50-75     21357.0  132.68         4.91         19.06    35.19     7.96       0.49
+75-90     12807.0  138.67         5.16         17.64    27.19     8.32       0.50
+90-95      4204.0  148.00         6.85         18.60    22.86     8.88       0.51
+95-97.5    2083.0  157.23         7.83         20.36    21.36     9.43       0.47
+97.5-100   2059.0  170.52        11.02         23.85    19.18    10.23       0.46
+
+SAME CHECK HELD WITHIN PHASE, competitive states only (0.10<=WP<=0.90): high (top 10%) vs ordinary (25th-75th pct)
+                      balls      SR  wkt_per_100  boundary_pct  dot_pct  economy  median_wp
+phase     grp                                                                              
+death     high       4373.0  159.71         9.42         21.24    20.76     9.58       0.47
+          ordinary    204.0  143.14         7.84         18.14    21.57     8.59       0.88
+middle    high       3646.0  148.33         6.09         18.57    22.93     8.90       0.50
+          ordinary   9463.0  128.97         4.59         14.48    26.21     7.74       0.58
+powerplay ordinary  19312.0  131.87         4.57         21.30    41.32     7.91       0.49
+(death overs have almost no 'ordinary' balls in a live chase: late in a close game nearly every ball is high-leverage)
+
+median state of high-pressure chase balls:
+balls_left      27.000
+wkts_in_hand     6.000
+req_rr          11.192
+wp               0.489
+leverage         0.042
+phase mix of high-pressure chase balls: {'death': 0.56, 'middle': 0.44}
+high-pressure chase balls: 8,346 | extreme: 2,059
+
+CALIBRATION CHECKS (chase balls): mean predicted WP vs actual win rate
+  by tier:
+                  n  predicted  actual
+tier                                  
+IPL         41244.0      0.499   0.501
+T20I_Assoc   5454.0      0.314   0.313
+T20I_Full   42186.0      0.478   0.479
+  by phase:
+                 n  predicted  actual
+phase                                
+death      17519.0      0.411   0.413
+middle     42219.0      0.492   0.491
+powerplay  29146.0      0.497   0.501
+  by wk_bucket:
+                    n  predicted  actual
+wk_bucket                               
+<=3 in hand    7239.0      0.082   0.064
+4-6 in hand   21364.0      0.314   0.323
+7-10 in hand  60281.0      0.583   0.584
+  by bl_bucket:
+                 n  predicted  actual
+bl_bucket                            
+<=12 left   5340.0      0.325   0.321
+13-36      16661.0      0.455   0.460
+37-72      28164.0      0.490   0.490
+73-120     38719.0      0.500   0.501
+  expected calibration error (10 bins): 0.0079
+
+ROBUSTNESS: corrupt score/target estimates (random error, sd 3 runs per innings = about 2x the observed
+error) and re-run the whole pipeline. Does the pressure ranking survive?
+  outcome model innings 2 (out-of-fold, legal balls): log-loss static phase mix 1.4965 -> state-aware 1.4887
+  seed 1: Spearman(leverage) = 0.959 | top-10% overlap (Jaccard) = 0.72 | share of original top-10% kept = 0.84
+  outcome model innings 2 (out-of-fold, legal balls): log-loss static phase mix 1.4965 -> state-aware 1.4886
+  seed 2: Spearman(leverage) = 0.964 | top-10% overlap (Jaccard) = 0.72 | share of original top-10% kept = 0.84
+  outcome model innings 2 (out-of-fold, legal balls): log-loss static phase mix 1.4965 -> state-aware 1.4888
+  seed 3: Spearman(leverage) = 0.964 | top-10% overlap (Jaccard) = 0.74 | share of original top-10% kept = 0.85

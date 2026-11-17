@@ -1,0 +1,14 @@
+raw rows: 200,999 | matches in ball-by-ball: 867 of 883 in matches.csv
+super-over rows dropped: 38
+No-result/abandoned matches flagged: 40 (flagged 'no_result')
+DLS/rain-affected flagged: 38 (4 found only through the result text)
+Tied / Super-Over-decided matches flagged: 10 (excluded from win-probability training)
+matches by tier: {'T20I_Full': 417, 'IPL': 367, 'T20I_Assoc': 53, 'OTHER_T20': 30} | tier means: {'IPL': 186.3, 'T20I_Assoc': 159.5, 'T20I_Full': 173.0}
+
+--- sanity checks ---
+complete (non-final) overs with exactly 6 legal balls: 0.9999 (n=30,626)
+2nd-innings rows: 95,234; with valid req_rr: 95,234
+margin reconciliation (n=399): mean abs error 2.11 runs, within +-2 runs 56.9%, mean error +0.13
+  -> extra run values are not recorded in the file; calibrated averages used. Individual innings can still be off by several runs.
+single-innings matches (kept, no target): 22
+rows by comp_group: {'T20I': 106315, 'IPL': 87673, 'OTHER_T20': 6973}

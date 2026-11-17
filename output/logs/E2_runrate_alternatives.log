@@ -1,0 +1,58 @@
+chase balls analysed: 85,138
+
+AGREEMENT with leverage index (Spearman rank correlation; overlap of top-10% sets):
+  rr_gap    rho=-0.036 | Jaccard top10% overlap=0.03 | share of leverage-top10% also in rr_gap top10%: 0.06
+  rr_ratio  rho=-0.067 | Jaccard top10% overlap=0.01 | share of leverage-top10% also in rr_ratio top10%: 0.03
+  rr_tight  rho=0.645 | Jaccard top10% overlap=0.50 | share of leverage-top10% also in rr_tight top10%: 0.67
+
+VALIDATION BY BAND: lev
+            balls      SR  wkt_per_100  boundary_pct  dot_pct  economy
+bin                                                                   
+0-50      42628.0  137.53         5.77         18.54    30.90     8.25
+50-75     21357.0  132.68         4.91         19.06    35.19     7.96
+75-90     12807.0  138.67         5.16         17.64    27.19     8.32
+90-95      4204.0  148.00         6.85         18.60    22.86     8.88
+95-97.5    2083.0  157.23         7.83         20.36    21.36     9.43
+97.5-100   2059.0  170.52        11.02         23.85    19.18    10.23
+
+VALIDATION BY BAND: rr_gap
+            balls      SR  wkt_per_100  boundary_pct  dot_pct  economy
+bin                                                                   
+0-50      42569.0  138.35         4.77         18.78    30.92     8.30
+50-75     21284.0  135.38         5.31         18.54    31.70     8.12
+75-90     12771.0  139.73         6.63         18.35    28.49     8.38
+90-95      4257.0  145.13         9.11         19.59    27.44     8.71
+95-97.5    2128.0  137.31         9.49         17.76    29.32     8.24
+97.5-100   2129.0  144.48        11.70         20.39    29.45     8.67
+
+VALIDATION BY BAND: rr_ratio
+            balls      SR  wkt_per_100  boundary_pct  dot_pct  economy
+bin                                                                   
+0-50      42568.0  136.22         4.81         18.23    30.96     8.17
+50-75     21285.0  139.85         5.48         19.59    31.18     8.39
+75-90     12771.0  141.49         6.61         18.87    28.73     8.49
+90-95      4257.0  144.23         8.62         19.10    27.04     8.65
+95-97.5    2147.0  148.02         8.80         20.03    28.69     8.88
+97.5-100   2110.0  122.75        11.00         16.35    33.98     7.36
+
+VALIDATION BY BAND: rr_tight
+            balls      SR  wkt_per_100  boundary_pct  dot_pct  economy
+bin                                                                   
+0-50      42569.0  136.67         5.64         19.92    34.90     8.20
+50-75     21284.0  139.00         5.32         17.95    28.14     8.34
+75-90     12771.0  134.34         5.79         15.57    24.86     8.06
+90-95      4256.0  148.64         5.69         18.84    23.64     8.92
+95-97.5    2129.0  149.84         6.95         19.21    21.98     8.99
+97.5-100   2129.0  154.77         8.60         20.15    22.26     9.29
+
+WITHIN-PHASE, competitive states only (0.10<=WP<=0.90): top-10% vs 25th-75th percentile, per definition
+    defn  phase  n_high  n_ord  SR_high  SR_ord  wk100_high  wk100_ord  bnd_high  bnd_ord
+     lev middle    3646   9463   148.33  128.97        6.09       4.59     18.57    14.48
+rr_tight middle    5065   7382   142.13  127.95        5.67       4.21     17.43    14.32
+rr_tight  death    3183    587   162.71  143.27        8.33      12.95     21.87    17.89
+
+SEPARATION SCORE (top 2.5% band vs 50-75 band): higher = index isolates riskier cricket
+  lev       wickets/100: 11.0 vs 4.9 (x2.25) | SR: 171 vs 133
+  rr_gap    wickets/100: 11.7 vs 5.3 (x2.20) | SR: 144 vs 135
+  rr_ratio  wickets/100: 11.0 vs 5.5 (x2.01) | SR: 123 vs 140
+  rr_tight  wickets/100: 8.6 vs 5.3 (x1.62) | SR: 155 vs 139

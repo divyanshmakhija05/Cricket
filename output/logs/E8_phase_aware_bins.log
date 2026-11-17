@@ -1,0 +1,17 @@
+E8 PHASE-AWARE STANDARDISATION vs POOLED BINS
+
+(1) phases inside a common grid of 13 pressure bins (clean legal chase balls, cells with >= 300 balls): spread across phases of the mean and SD of z
+  pooled bins (old)            bins with >=2 phases: 11 | mean-z range across phases: mean 0.033, max 0.096 | SD ratio across phases: mean 1.17, max 1.44
+  phase-aware bins (adopted)   bins with >=2 phases: 11 | mean-z range across phases: mean 0.011, max 0.054 | SD ratio across phases: mean 1.08, max 1.28
+
+(2) repeatability of the shrunk pressure level (random match halves, 20 splits; early vs late)
+  bat  pooled bins (old)        random halves +0.28 | early vs late +0.06
+  bat  phase-aware (adopted)    random halves +0.31 | early vs late +0.07
+  bowl pooled bins (old)        random halves +0.35 | early vs late +0.39
+  bowl phase-aware (adopted)    random halves +0.33 | early vs late +0.37
+
+(3)-(4) change in ratings when moving from pooled to phase-aware bins (eligible players of the adopted model)
+  bat : rating Spearman 0.988 | top-10 overlap 9/10 | change in pressure level vs death-over share: correlation -0.67, slope -0.42 SDs per unit of death share | mean |change| 0.106, max 0.35
+  bowl: rating Spearman 0.991 | top-10 overlap 10/10 | change in pressure level vs death-over share: correlation +0.48, slope +0.36 SDs per unit of death share | mean |change| 0.072, max 0.24
+
+Reading: a negative slope for batters and a positive slope for bowlers means the pooled bins rewarded death-over hitting and penalised death-over bowling relative to the phase-aware cells.
